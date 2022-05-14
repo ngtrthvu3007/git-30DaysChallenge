@@ -24,7 +24,7 @@ body{
 }
 .card__like {
     font-size: 25px;
-    position: absolute;
+   position: absolute;
     top: 12px;
     left: 20px;
     cursor: pointer;
@@ -34,6 +34,7 @@ body{
 .card__cart {
     font-size: 25px;
     position: absolute;
+    float: right;
     top: 12px;
     left: unset;
     right: 20px;
@@ -132,7 +133,7 @@ body{
     outline: none;
     background: white;
     padding: 10px 20px;
-    border-radius: 10%;
+    border-radius: 5px;
     font-weight: 600;
     color: black;
     cursor: pointer;
@@ -144,7 +145,7 @@ body{
     color: white;
 }
 .card:hover .card__img {
-    transform: translateY(-90px) rotate(-20deg);
+    transform: translateY(-100px) rotate(-20deg);
     padding-right: 30px;
  
 }
@@ -166,8 +167,129 @@ body{
 }
 
 
+/* modal box*/
+.modal{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal.open{
+    display: flex;
+}
+
+.modal__container{
+   background-color: white;
+   width: 800px;
+   max-width: calc(100%  - 40px);
+   min-height: 200px;
+   position: relative;
+   animation: modalFadeIn ease 0.5s;
+   
+   
+    
+}
+/* header modal*/
+.container__header{
+    display: flex;
+    background-color: #FF4040;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+    width: 100%; 
+    
+    
+}
 
 
+
+.container__close{
+    right: 0;
+    top: 0;
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    padding-top: 15px;
+    padding-right: 15px;
+}
+.container__close:hover{
+    color: lightgray;
+    cursor: pointer;
+}
+
+
+
+/*body modal*/
+.container__body{
+   display: flex;
+   flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+   
+.container__body__items{
+   margin-bottom: 10px;
+   
+   margin-top: 20px;
+  
+}
+.container__label, .container__label i{
+    display: flex;
+    font-weight: 500;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    font-size: 22px;
+}
+.container__body input{
+    width: 600px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 20px;
+}
+.container__body button{
+    width: 600px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 22px;
+    font-weight: 500;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.container__body button:hover{
+    background-color: #FF4040;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0px -10px 20px -10px lightgray;
+    font-weight: 600;
+    font-style: italic;
+}
+.container__body input:hover{
+    box-shadow: 0px -10px 20px -10px lightgray;
+}
+
+/*footer modal*/
+
+.infoot{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-style: italic;
+    font-size: 17px;
+    padding-bottom: 10px;
+}
 /* footer - information*/
 footer{
     height: 100px;
@@ -182,4 +304,16 @@ footer i{
 footer p{
     font-size: 16px;
     font-weight: 400;
+}
+
+
+@keyframes modalFadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-120px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
